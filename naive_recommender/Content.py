@@ -5,8 +5,8 @@ from sklearn.metrics.pairwise import linear_kernel
 
 class Content_recommender:
     def __init__(self):
-        df1 = pd.read_csv('../data/tmdb_5000_credits.csv')
-        df2 = pd.read_csv('../data/tmdb_5000_movies.csv')
+        df1 = pd.read_csv('/Users/mac/Desktop/机器学习期末论文/Movie-Analysis/data/tmdb_5000_credits.csv')
+        df2 = pd.read_csv('/Users/mac/Desktop/机器学习期末论文/Movie-Analysis/data/tmdb_5000_movies.csv')
         df1.columns = ['id', 'tittle', 'cast', 'crew']
         self.movies = df2.merge(df1, on='id')
 
@@ -37,5 +37,5 @@ class Content_recommender:
 
 
 test = Content_recommender()
-print(test.recommnd('The Dark Knight Rises'))
+print(test.recommend('The Dark Knight Rises'))
 

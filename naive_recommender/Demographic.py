@@ -6,8 +6,8 @@ import numpy as np
 # a general recommender method, not sensitive to the interests and tastes of a particular user
 class Demographic_recommender:
     def __init__(self):
-        df1 = pd.read_csv('../data/tmdb_5000_credits.csv')
-        df2 = pd.read_csv('../data/tmdb_5000_movies.csv')
+        df1 = pd.read_csv('./data/tmdb_5000_credits.csv')
+        df2 = pd.read_csv('./data/tmdb_5000_movies.csv')
         df1.columns = ['id', 'tittle', 'cast', 'crew']
         df2 = df2.merge(df1, on='id')
         self.average_vote = df2['vote_average'].mean()

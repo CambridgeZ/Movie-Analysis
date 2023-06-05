@@ -6,8 +6,8 @@ from sklearn.metrics.pairwise import cosine_similarity
 
 class Keyword_recommender:
     def __init__(self):
-        df1 = pd.read_csv('../data/tmdb_5000_credits.csv')
-        df2 = pd.read_csv('../data/tmdb_5000_movies.csv')
+        df1 = pd.read_csv('./data/tmdb_5000_credits.csv')
+        df2 = pd.read_csv('./data/tmdb_5000_movies.csv')
         df1.columns = ['id', 'tittle', 'cast', 'crew']
         self.movies = df2.merge(df1, on='id')
         features = ['cast', 'crew', 'keywords', 'genres']
